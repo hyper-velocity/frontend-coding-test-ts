@@ -15,8 +15,16 @@
                 to="/"
                 class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                 exact-active-class="bg-gray-900 text-white"
-                >Home</router-link
               >
+                Home
+              </router-link>
+              <router-link
+                to="/exercise"
+                class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                exact-active-class="bg-gray-900 text-white"
+              >
+                Exercise
+              </router-link>
             </div>
           </div>
         </div>
