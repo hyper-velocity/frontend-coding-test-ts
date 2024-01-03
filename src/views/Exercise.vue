@@ -42,9 +42,17 @@ const jumpTo = (page: number) => {
 watch(
   () => pagination.page,
   async () => {
-    const res = await apis.items.getItems(pagination.page)
-    pagination.total = res.count
-    items.value = res.results
+    try {
+      const res = await apis.items.getItems(pagination.page)
+      pagination.total = res.count
+      items.value = res.results
+      toast({ message: `${items.value.length} items have been fetched` })
+    } catch (err) {
+      toast({
+        message: 'An unexpected error occured while fetching items',
+        type: 'error',
+      })
+    }
   },
   { immediate: true },
 )
